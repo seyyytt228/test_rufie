@@ -1,15 +1,15 @@
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QHBoxLayout, QLineEdit
 from instr import *
-app = QApplication([])
-win = QWidget()
+from final_win import *
+
 class TestWin(QWidget):
     def __init__(self):
-        super(). __init__()
+        super().__init__()
         self.set_appear()
         self.initUI()
         self.connects()
-        self.next_click()
+        # self.next_click()
         self.show()
 
     def set_appear(self):
@@ -90,14 +90,7 @@ class TestWin(QWidget):
 
     def next_click(self):
         self.hide()
-        #self.tw = FinalWin()
+        self.tw = FinalWin()
 
-    def show(self):
-        pass
-
-    
-
-win.show()
-win = TestWin()
-
-app.exec_()
+    #def show(self):
+     #   pass
