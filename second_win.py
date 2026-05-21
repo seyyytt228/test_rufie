@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QVBoxLayout, QHBoxLayout, QLineEdit
 from instr import *
 app = QApplication([])
@@ -48,35 +48,54 @@ class TestWin(QWidget):
         self.l_line.addWidget(self.pb1)
         self.l_line.addWidget(self.line3)
         self.l_line.addWidget(self.btn4)
-        self.l_line.addWidget(self.line4)
         self.l_line.addWidget(self.pb2)
         self.l_line.addWidget(self.btn5)
         self.l_line.addWidget(self.pb3)
+        self.l_line.addWidget(self.line4)
         self.l_line.addWidget(self.line5)
 
         self.r_line.addWidget(self.bt6timer)
-
-        self.h_line.addWidget(self.pb4, alignment = Qt.AlignCenter)
 
         
         self.h_line.addLayout(self.l_line)
         self.h_line.addLayout(self.r_line)
         self.setLayout(self.h_line)
 
+        self.l_line.addWidget(self.pb4, alignment = Qt.AlignCenter)
+
 
     def connects(self):
         self.pb4.clicked.connect(self.next_click)
+        #self.pb1.clicked.connect(self.start_timer)
+        #self.sec = 15
+        #self.timer = QTimer()
+        #self.timer.timeout.connect(self.update_timer)
+
+    #def start_timer(self):
+     #   self.timer.start(15)
+
+    #def update_timer(self):
+     #   self.seconds_left -= 1
+      #  if self.seconds_left >= 0:
+       #     self.update_display()
+        #else:
+         #   self.timer.stop()
+          #  self.bt6timer.setText('00:00:00')
+        
+    #def update_display(self):
+     #   minutes, seconds = divmod(self.seconds_left, 60)
+      #  self.bt6timer.setText(f'{minutes:02}:{seconds:02}')
+
+
 
     def next_click(self):
         self.hide()
         #self.tw = FinalWin()
 
+    def show(self):
+        pass
 
-    #def.show(self):
-     #   pass
-
-#index = 4 * (self.line3 + self.line4 + self.line5) - 200   
-#index_rufe = index / 10
+    
 
 win.show()
 win = TestWin()
